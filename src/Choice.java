@@ -10,4 +10,8 @@ public enum Choice {
     Choice(String message){
         this.message=message;
     }
+    @Override
+    public String toString(){
+        return message;
+    }
 }
