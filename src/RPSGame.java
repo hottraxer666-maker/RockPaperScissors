@@ -6,7 +6,6 @@ public class RPSGame {
         game();
     }
     public static  void game(){
-        boolean isWin=false;
         int playerScore = 0;
         int playerNum=0;
         int computerScore=0;
@@ -36,7 +35,38 @@ public class RPSGame {
                 computerChoice=Choice.PAPER;
             }
             if(playerChoice==computerChoice){
-                System.out.println("Ничья!Вы выбрали "+playerChoice);
+                System.out.println("Ничья!Вы выбрали "+playerChoice+" компьютер выбрал "+computerChoice);
+                System.out.println("Счёт "+playerScore+":"+computerScore);
+            }else if(playerChoice==Choice.ROCK&&computerChoice==Choice.SCISSORS){
+                playerScore++;
+                System.out.println("Победа!Вы выбрали "+playerChoice+" компьютер выбрал "+computerChoice);
+                System.out.println("Счёт "+playerScore+":"+computerScore);
+            }else if(playerChoice==Choice.ROCK&&computerChoice==Choice.PAPER){
+                computerScore++;
+                System.out.println("Поражение!Вы выбрали "+playerChoice+" компьютер выбрал "+computerChoice);
+                System.out.println("Счёт "+playerScore+":"+computerScore);
+            }else if(playerChoice==Choice.SCISSORS&&computerChoice==Choice.PAPER){
+                playerScore++;
+                System.out.println("Победа!Вы выбрали "+playerChoice+" компьютер выбрал "+computerChoice);
+                System.out.println("Счёт "+playerScore+":"+computerScore);
+            }else if(playerChoice==Choice.SCISSORS&&computerChoice==Choice.ROCK){
+                computerScore++;
+                System.out.println("Поражение!Вы выбрали "+playerChoice+" компьютер выбрал "+computerChoice);
+                System.out.println("Счёт "+playerScore+":"+computerScore);
+            }else if(playerChoice==Choice.PAPER&&computerChoice==Choice.ROCK){
+                playerScore++;
+                System.out.println("Победа!Вы выбрали "+playerChoice+" компьютер выбрал "+computerChoice);
+                System.out.println("Счёт "+playerScore+":"+computerScore);
+            }else if(playerChoice==Choice.PAPER&&computerChoice==Choice.SCISSORS){
+                computerScore++;
+                System.out.println("Поражение!Вы выбрали "+playerChoice+" компьютер выбрал "+computerChoice);
+                System.out.println("Счёт "+playerScore+":"+computerScore);
+            }
+            if(playerScore==3){
+                System.out.println("Вы победили!Счёт "+playerScore+":"+computerScore);
+            }
+            if(computerScore==3){
+                System.out.println("Вы проиграли.Счёт "+playerScore+":"+computerScore);
             }
         }
 
